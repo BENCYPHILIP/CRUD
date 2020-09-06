@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h2 style="text-align: center;">Course Configuration</h2>
+    <a routerLink="student/add/0"  class ="btn btn-primary mt-5 mb-3">Add Course +</a>
+
+<table class="table">
+    <thead>
+        <th>Id</th>
+        <th>Course</th>
+        <th>Duration</th>
+        <th>Operations</th>
+</thead>
+<tbody>
+<tr *ngFor = "let student of students">
+        <td>{{student.id}}</td>
+        <td>{{student.course}}</td>
+        <td>{{student.duration}}</td>
+        <td><a  class="btn btn-success" [routerLink]="['student/edit',student.id]">Edit</a>&nbsp;
+        <button class="btn btn-danger" (click)="onDelete(student.id)">Delete</button></td>
+     </tr>
+</tbody>
+</table>
+</div>
